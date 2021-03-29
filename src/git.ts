@@ -46,7 +46,7 @@ export const getRepositoryUrl = async (): Promise<string | null> => {
   const httpRegex = /https:\/\/github\.com\/(.+)\.git/;
   const replace = 'https://github.com/$1';
 
-  for (let testRegx of [sshRegex, httpRegex]) {
+  for (const testRegx of [sshRegex, httpRegex]) {
     if (testRegx.test(remote)) {
       return remote.replace(sshRegex, replace);
     }
