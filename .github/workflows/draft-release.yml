@@ -51,11 +51,10 @@ jobs:
       - name: Create a release
         uses: octokit/request-action@v2.x
         with:
-          route: POST /repos/{repo}/releases/latest
-          repo: ${{ github.repository }}
+          route: POST /repos/${{ github.repository }}/releases
           draft: true
-          name: ${{ steps.changelog.next-tag.result }}
-          tag_name: ${{ steps.changelog.next-tag.result }}
+          name: ${{ steps.next-tag.outputs.result }}
+          tag_name: ${{ steps.next-tag.outputs.result }}
           target_commitish: ${{ steps.set-commitish.outputs.commitish }}
           body: |-
             # What's new
