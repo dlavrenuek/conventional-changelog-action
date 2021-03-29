@@ -1,0 +1,30 @@
+name: "development"
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - run: yarn install --frozen-lockfile
+
+      - run: yarn test
+
+  test-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: ./
+        with:
+          from:
+          to: HEAD

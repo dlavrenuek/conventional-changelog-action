@@ -1,0 +1,24 @@
+name: "Generic Conventional Changelog GitHub action"
+description: "Generates a changelog from conventional commit history between two given references"
+author: "Dimitri Lavrenük <dimitri.lavr@gmail.com>"
+branding:
+  icon: "layers"
+  color: "yellow"
+inputs:
+  from:
+    description: "Tag Name or Commit SHA of previous release"
+    required: true
+  to:
+    description: "Commit SHA or HEAD that is used for the next release"
+    required: true
+  config-file:
+    description: "Configuration file (optional)"
+    required: false
+outputs:
+  body:
+    description: "Changelog in markdown format"
+  bump:
+    description: "Calculated version bump type based on the provided configuration"
+runs:
+  using: "node12"
+  main: "dist/index.js"
