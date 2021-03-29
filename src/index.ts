@@ -18,11 +18,10 @@ const run = async () => {
 
     setOutput('body', body);
     setOutput('bump', bump);
-
-    const git = simpleGit();
-    setOutput('test', JSON.stringify(await git.listConfig()));
   } catch (error) {
-    setFailed(error.message);
+    const git = simpleGit();
+    setFailed(JSON.stringify(await git.listConfig()));
+    //setFailed(error.message);
   }
 };
 
