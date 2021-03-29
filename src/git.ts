@@ -35,11 +35,14 @@ export const getCommits: Git = async ({ from, to }) => {
 };
 
 export const getRepositoryUrl = async (): Promise<string | null> => {
+  const gitConfig = await git.listConfig();
   const {
     values: {
       '.git/config': { 'remote.origin.url': remotes },
     },
-  } = await git.listConfig();
+  } = gitConfig;
+
+  console.log(gitConfig);
 
   const remote = Array.isArray(remotes) ? remotes[0] : remotes;
   const sshRegex = /git@github\.com:(.+)\.git/;
