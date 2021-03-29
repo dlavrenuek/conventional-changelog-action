@@ -56,9 +56,6 @@ jobs:
           name: ${{ steps.next-tag.outputs.result }}
           tag_name: ${{ steps.next-tag.outputs.result }}
           target_commitish: ${{ steps.set-commitish.outputs.commitish }}
-          body: |-
-            # What's new
-
-            ${{ steps.changelog.outputs.body }}
+          body: ${{ toJSON(steps.changelog.outputs.body) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
