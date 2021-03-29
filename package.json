@@ -10,6 +10,7 @@
   },
   "homepage": "https://github.com/dlavrenuek/conventional-changelog-action#readme",
   "scripts": {
+    "format": "prettier --write .",
     "test": "yarn test:format && yarn test:lint && yarn test:unit",
     "test:format": "prettier --check .",
     "test:lint": "eslint src/**/*.ts",

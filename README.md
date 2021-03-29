@@ -29,11 +29,11 @@ The changelog can be accessed in other steps by `${{ steps.changelog.outputs.bod
 
 Inputs available through `with`:
 
-| Input | Description | Required |
-| ----- | ----------- | -------- |
-| from | Commit SHA, tag or reference as starting point for the changelog | ✔ |
-| to | Commit SHA, tag or reference as ending point for the changelog | ✔ |
-| config-file | Path to the configuration file to override default configuration |  |
+| Input       | Description                                                      | Required |
+| ----------- | ---------------------------------------------------------------- | -------- |
+| from        | Commit SHA, tag or reference as starting point for the changelog | ✔        |
+| to          | Commit SHA, tag or reference as ending point for the changelog   | ✔        |
+| config-file | Path to the configuration file to override default configuration |          |
 
 The default configuration can be found in [`defaultConfig.json`](https://github.com/dlavrenuek/conventional-changelog-action/master/src/defaultConfig.json)
 
@@ -41,8 +41,7 @@ The default configuration can be found in [`defaultConfig.json`](https://github.
 
 Inputs available through `outputs`:
 
-
-| Output | Description |
-| ----- | ----------- |
-| body | The changelog body |
-| bump | Recommended bump based on the provided configuration |
+| Output | Description                                          |
+| ------ | ---------------------------------------------------- |
+| body   | The changelog body                                   |
+| bump   | Recommended bump based on the provided configuration |
