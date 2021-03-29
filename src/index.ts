@@ -1,12 +1,8 @@
 import { getInput, setFailed, setOutput } from '@actions/core';
 import path from 'path';
 import generate from './generate';
-import simpleGit from 'simple-git';
 
 const run = async () => {
-  const git = simpleGit();
-  setOutput('body', JSON.stringify(await git.listConfig()));
-  return;
   try {
     const from = getInput('from');
     const to = getInput('to');
