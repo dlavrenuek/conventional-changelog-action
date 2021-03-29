@@ -5,15 +5,17 @@ import { promisify } from 'util';
 
 const exec = promisify(cp.exec);
 
-test('test runs', async () => {
-  process.env['INPUT_FROM'] = '';
-  process.env['INPUT_TO'] = 'HEAD';
+describe('index.ts', () => {
+  test('The action is executed without an error', async () => {
+    process.env['INPUT_FROM'] = '';
+    process.env['INPUT_TO'] = 'HEAD';
 
-  const ip = path.join(__dirname, 'index.ts');
-  const { stdout, stderr } = await exec(`ts-node ${ip}`, {
-    env: process.env,
+    const ip = path.join(__dirname, 'index.ts');
+    const { stdout, stderr } = await exec(`ts-node ${ip}`, {
+      env: process.env,
+    });
+
+    expect(stderr).toBeFalsy();
+    expect(stdout).toBeTruthy();
   });
-
-  expect(stderr).toBeFalsy();
-  expect(stdout).toBeTruthy();
 });

@@ -1,8 +1,6 @@
 import { getInput, setFailed, setOutput } from '@actions/core';
-import { getConfig } from './config';
-import { getCommits, getIssuesPath } from './git';
-import { generateChangelog } from './changelog';
 import path from 'path';
+import generate from './generate';
 
 const run = async () => {
   try {
@@ -10,13 +8,11 @@ const run = async () => {
     const to = getInput('to');
     const configFile =
       getInput('config-file') || path.join(__dirname, 'defaultConfig.json');
-    const issuesUrl = getInput('issues-url') || (await getIssuesPath());
-    const config = getConfig(configFile);
-    const commits = await getCommits({ from, to });
-    const { body, bump } = generateChangelog({
-      ...config,
-      commits,
-      issuesUrl,
+
+    const { body, bump } = await generate({
+      from,
+      to,
+      configFile,
     });
 
     setOutput('body', body);
