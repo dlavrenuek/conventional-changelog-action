@@ -1,0 +1,65 @@
+name: Create a draft release
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: 'Or enter a commit to use (HEAD of the selected branch if empty)'
+        required: false
+        default: ''
+
+jobs:
+  create_draft_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set commitish
+        id: set-commitish
+        run: |-
+          if [[ -z "${{ github.event.inputs.commit }}" ]]; then
+            # no commit is entered
+            echo "::set-output name=commitish::$GITHUB_SHA";
+          else
+            echo "::set-output name=commitish::${{ github.event.inputs.commit }}";
+          fi
+
+      - name: Determinate latest released tag
+        id: current-tag
+        run: |-
+          branch=${GITHUB_REF#refs/heads/}
+          tag=$( git tag -l --merged "$branch" "v*.*.*" --sort=-committerdate | head -n 1 );
+          echo "::set-output name=tag::$tag";
+
+      - name: Generate changelog
+        uses: ./
+        id: changelog
+        with:
+          from: ${{ steps.current-tag.outputs.tag }}
+          to: ${{ steps.set-commitish.outputs.commitish }}
+
+      - name: Get next version
+        uses: vemel/nextversion
+        id: next-tag
+        with:
+          version: ${{ steps.current-tag.outputs.tag }}
+          result: ${{ steps.changelog.outputs.bump }}
+
+      - name: Create a release
+        uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/{repo}/releases/latest
+          repo: ${{ github.repository }}
+          draft: true
+          name: ${{ steps.changelog.next-tag.result }}
+          tag_name: ${{ steps.changelog.next-tag.result }}
+          target_commitish: ${{ steps.set-commitish.outputs.commitish }}
+          body: |-
+            # What's new
+
+            ${{ steps.changelog.outputs.body }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
