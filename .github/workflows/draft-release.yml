@@ -42,7 +42,7 @@ jobs:
           to: ${{ steps.set-commitish.outputs.commitish }}
 
       - name: Get next version
-        uses: vemel/nextversion
+        uses: vemel/nextversion@0.1.0
         id: next-tag
         with:
           version: ${{ steps.current-tag.outputs.tag }}
