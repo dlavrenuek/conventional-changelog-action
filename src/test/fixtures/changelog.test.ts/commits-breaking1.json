@@ -1,0 +1,122 @@
+[
+  {
+    "author_email": "",
+    "author_name": "",
+    "body": "",
+    "date": "",
+    "hash": "",
+    "message": "feat: test feature",
+    "parsed": {
+      "body": null,
+      "footer": null,
+      "subject": "test feature",
+      "mentions": [],
+      "merge": null,
+      "notes": [],
+      "references": [],
+      "revert": null,
+      "scope": null,
+      "header": "",
+      "type": "feat"
+    },
+    "refs": ""
+  },
+  {
+    "author_email": "",
+    "author_name": "",
+    "body": "",
+    "date": "",
+    "hash": "",
+    "message": "feat: test another feature",
+    "parsed": {
+      "body": null,
+      "footer": null,
+      "subject": "test another feature",
+      "mentions": [],
+      "merge": null,
+      "notes": [],
+      "references": [],
+      "revert": null,
+      "scope": null,
+      "header": "",
+      "type": "feat"
+    },
+    "refs": ""
+  },
+  {
+    "author_email": "",
+    "author_name": "",
+    "body": "",
+    "date": "",
+    "hash": "",
+    "message": "fix!: test another fix",
+    "parsed": {
+      "body": null,
+      "footer": null,
+      "subject": "test another fix",
+      "mentions": [],
+      "merge": null,
+      "notes": [
+        {
+          "title": "BREAKING CHANGE",
+          "text": ""
+        }
+      ],
+      "references": [],
+      "revert": null,
+      "scope": null,
+      "header": "",
+      "type": "fix"
+    },
+    "refs": ""
+  },
+  {
+    "author_email": "",
+    "author_name": "",
+    "body": "",
+    "date": "",
+    "hash": "",
+    "message": "feat(test)!: test some more feature",
+    "parsed": {
+      "body": null,
+      "footer": null,
+      "subject": "test some more feature",
+      "mentions": [],
+      "merge": null,
+      "notes": [
+        {
+          "title": "BREAKING CHANGE",
+          "text": ""
+        }
+      ],
+      "references": [],
+      "revert": null,
+      "scope": "test",
+      "header": "",
+      "type": "feat"
+    },
+    "refs": ""
+  },
+  {
+    "author_email": "",
+    "author_name": "",
+    "body": "",
+    "date": "",
+    "hash": "",
+    "message": "chore: test some chore",
+    "parsed": {
+      "body": null,
+      "footer": null,
+      "subject": "test some chore",
+      "mentions": [],
+      "merge": null,
+      "notes": [],
+      "references": [],
+      "revert": null,
+      "scope": "",
+      "header": "",
+      "type": "chore"
+    },
+    "refs": ""
+  }
+]

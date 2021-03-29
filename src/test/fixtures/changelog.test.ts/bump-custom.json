@@ -1,0 +1,5 @@
+[
+  { "title": "custom1", "types": ["feat"] },
+  { "title": "custom2", "types": ["breaking"] },
+  { "title": "custom3", "types": [""] }
+]

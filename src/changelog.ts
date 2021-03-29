@@ -4,7 +4,7 @@ const BREAKING_CHANGE_TITLE = 'BREAKING CHANGE';
 
 type IndexedByType = Record<string, Commit[]>;
 
-const indexByType = (commits: Commit[]): IndexedByType =>
+export const indexByType = (commits: Commit[]): IndexedByType =>
   commits.reduce<IndexedByType>((indexed, commit) => {
     const {
       parsed: { type, notes },
@@ -25,16 +25,19 @@ const indexByType = (commits: Commit[]): IndexedByType =>
     };
   }, {});
 
-const commitToChagelogLine = (commit: Commit, issuesUrl: string) => {
-  const message = commit.parsed.subject.replace(
+export const commitToChagelogLine = (
+  { parsed: { subject, scope } }: Commit,
+  issuesUrl: string
+) => {
+  const message = subject.replace(
     /(.+)\(#([0-9]+)\)/,
     `$1([#$2](${issuesUrl}$2))`
   );
 
-  return `* ${message}`;
+  return `* ${scope ? `**${scope}** ` : ''}${message}`;
 };
 
-const calculateBump = (
+export const calculateBump = (
   indexedByType: IndexedByType,
   bumpLabels: GroupLabel[]
 ): string => {

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generate.ts generates the correct changelog 1`] = `
+Object {
+  "body": "## 🚀 New Features
+* add issuesUrl to configuration
+
+## 💊 Bugfixes
+* fix eslint rules and formatting
+
+## 🧹 Chore
+* fix formatting with prettier
+* update usage documentation",
+  "bump": "minor",
+}
+`;

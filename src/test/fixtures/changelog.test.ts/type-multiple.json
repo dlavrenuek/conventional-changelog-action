@@ -1,0 +1,6 @@
+[
+  { "title": "Breaking changes", "types": ["breaking"] },
+  { "title": "New features", "types": ["feat", "feature"] },
+  { "title": "Bug fixes", "types": ["fix"] },
+  { "title": "Chore", "types": ["chore"] }
+]

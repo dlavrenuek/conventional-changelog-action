@@ -1,0 +1,5 @@
+[
+  { "title": "major", "types": ["breaking"] },
+  { "title": "minor", "types": ["feature"] },
+  { "title": "patch", "types": [""] }
+]
