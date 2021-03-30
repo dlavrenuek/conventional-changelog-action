@@ -9,19 +9,15 @@ export const indexByType = (commits: Commit[]): IndexedByType =>
     const {
       parsed: { type, notes },
     } = commit;
-    const hasBreaking =
-      type !== 'breaking' && // if type=='breaking' the commit will be already added to the breaking index
-      notes.some(({ title }) => title === BREAKING_CHANGE_TITLE);
-    const typeArray = [...(indexed[type] || []), commit];
-    const breakingArray = [
-      ...(indexed.breaking || []),
-      ...(hasBreaking ? [commit] : []),
-    ];
+    const isBreaking = notes.some(
+      ({ title }) => title === BREAKING_CHANGE_TITLE
+    );
+    const determinedType = isBreaking ? 'breaking' : type;
+    const typeArray = [...(indexed[determinedType] || []), commit];
 
     return {
       ...indexed,
-      breaking: breakingArray,
-      [type]: typeArray,
+      [determinedType]: typeArray,
     };
   }, {});
 
@@ -34,7 +30,7 @@ export const commitToChagelogLine = (
     `$1([#$2](${issuesUrl}$2))`
   );
 
-  return `* ${scope ? `**${scope}** ` : ''}${message}`;
+  return `* ${scope ? `**${scope}**: ` : ''}${message}`;
 };
 
 export const calculateBump = (
