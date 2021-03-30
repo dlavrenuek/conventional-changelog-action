@@ -50,10 +50,10 @@ jobs:
       - name: Get next version
         id: next-tag
         run: |-
-          if [[ "${{ toJSON(steps.changelog.outputs.bump) }}" == "major"]]
+          if [[ "${{ steps.changelog.outputs.bump }}" == "major"]]
           then
             echo "::set-output name=tag::${{ steps.semver.outputs.v_major }}";
-          elif [[ "${{ toJSON(steps.changelog.outputs.bump) }}" == "minor"]]
+          elif [[ "${{ steps.changelog.outputs.bump }}" == "minor"]]
           then
             echo "::set-output name=tag::${{ steps.semver.outputs.v_minor }}";
           else
