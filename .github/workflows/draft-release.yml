@@ -41,20 +41,32 @@ jobs:
           from: ${{ steps.current-tag.outputs.tag }}
           to: ${{ steps.set-commitish.outputs.commitish }}
 
-      - name: Get next version
-        uses: vemel/nextversion@0.1.0
-        id: next-tag
+      - name: Parse current tag
+        id: semver
+        uses: WyriHaximus/github-action-next-semvers@v1
         with:
           version: ${{ steps.current-tag.outputs.tag }}
-          result: ${{ steps.changelog.outputs.bump }}
+
+      - name: Get next version
+        id: next-tag
+        run: |-
+          if [[ "${{ toJSON(steps.changelog.outputs.bump) }}" == "major"]]
+          then
+            echo "::set-output name=tag::${{ steps.semver.outputs.v_major }}";
+          elif [[ "${{ toJSON(steps.changelog.outputs.bump) }}" == "minor"]]
+          then
+            echo "::set-output name=tag::${{ steps.semver.outputs.v_minor }}";
+          else
+            echo "::set-output name=tag::${{ steps.semver.outputs.v_patch }}";
+          fi
 
       - name: Create a release
         uses: octokit/request-action@v2.x
         with:
           route: POST /repos/${{ github.repository }}/releases
           draft: true
-          name: ${{ steps.next-tag.outputs.result }}
-          tag_name: ${{ steps.next-tag.outputs.result }}
+          name: ${{ steps.next-tag.outputs.tag }}
+          tag_name: ${{ steps.next-tag.outputs.tag }}
           target_commitish: ${{ steps.set-commitish.outputs.commitish }}
           body: ${{ toJSON(steps.changelog.outputs.body) }}
         env:
