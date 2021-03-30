@@ -22,7 +22,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature",
+* **test**: test some more feature",
   "bump": "custom1",
 }
 `;
@@ -31,7 +31,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature",
+* **test**: test some more feature",
   "bump": "custom1",
 }
 `;
@@ -40,15 +40,11 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -60,15 +56,11 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -80,7 +72,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature",
+* **test**: test some more feature",
   "bump": "",
 }
 `;
@@ -89,7 +81,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature",
+* **test**: test some more feature",
   "bump": "",
 }
 `;
@@ -98,15 +90,11 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -118,15 +106,11 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -138,7 +122,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature",
+* **test**: test some more feature",
   "bump": "major",
 }
 `;
@@ -147,7 +131,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature",
+* **test**: test some more feature",
   "bump": "major",
 }
 `;
@@ -156,15 +140,11 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -176,15 +156,11 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -196,7 +172,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type",
   "bump": "custom1",
 }
@@ -206,7 +182,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type",
   "bump": "custom1",
 }
@@ -216,16 +192,12 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -237,16 +209,12 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -258,7 +226,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type",
   "bump": "",
 }
@@ -268,7 +236,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type",
   "bump": "",
 }
@@ -278,16 +246,12 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -299,16 +263,12 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -320,7 +280,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type",
   "bump": "major",
 }
@@ -330,7 +290,7 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## BREAKING TYPE TITLE
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type",
   "bump": "major",
 }
@@ -340,16 +300,12 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -361,16 +317,12 @@ exports[`changelog.ts generateChangelog correctly generates the changelog with: 
 Object {
   "body": "## Breaking changes
 * test another fix
-* **test** test some more feature
+* **test**: test some more feature
 * test breaking as a type
 
 ## New features
 * test feature
 * test another feature
-* **test** test some more feature
-
-## Bug fixes
-* test another fix
 
 ## Chore
 * test some chore",
@@ -397,13 +349,13 @@ Object {
   "body": "## New features
 * test feature
 * test another feature
-* **test** test some more feature
+* **test**: test some more feature
 
 ## Bug fixes
 * test another fix
 
 ## Chore
-* **test** test some chore",
+* **test**: test some chore",
   "bump": "custom1",
 }
 `;
@@ -413,13 +365,13 @@ Object {
   "body": "## New features
 * test feature
 * test another feature
-* **test** test some more feature
+* **test**: test some more feature
 
 ## Bug fixes
 * test another fix
 
 ## Chore
-* **test** test some chore",
+* **test**: test some chore",
   "bump": "custom1",
 }
 `;
@@ -443,13 +395,13 @@ Object {
   "body": "## New features
 * test feature
 * test another feature
-* **test** test some more feature
+* **test**: test some more feature
 
 ## Bug fixes
 * test another fix
 
 ## Chore
-* **test** test some chore",
+* **test**: test some chore",
   "bump": "",
 }
 `;
@@ -459,13 +411,13 @@ Object {
   "body": "## New features
 * test feature
 * test another feature
-* **test** test some more feature
+* **test**: test some more feature
 
 ## Bug fixes
 * test another fix
 
 ## Chore
-* **test** test some chore",
+* **test**: test some chore",
   "bump": "",
 }
 `;
@@ -489,13 +441,13 @@ Object {
   "body": "## New features
 * test feature
 * test another feature
-* **test** test some more feature
+* **test**: test some more feature
 
 ## Bug fixes
 * test another fix
 
 ## Chore
-* **test** test some chore",
+* **test**: test some chore",
   "bump": "minor",
 }
 `;
@@ -505,13 +457,13 @@ Object {
   "body": "## New features
 * test feature
 * test another feature
-* **test** test some more feature
+* **test**: test some more feature
 
 ## Bug fixes
 * test another fix
 
 ## Chore
-* **test** test some chore",
+* **test**: test some chore",
   "bump": "minor",
 }
 `;
@@ -640,62 +592,6 @@ Object {
         "scope": null,
         "subject": "test another feature",
         "type": "feat",
-      },
-      "refs": "",
-    },
-    Object {
-      "author_email": "",
-      "author_name": "",
-      "body": "",
-      "date": "",
-      "hash": "",
-      "message": "feat(test)!: test some more feature",
-      "parsed": Object {
-        "body": null,
-        "footer": null,
-        "header": "",
-        "mentions": Array [],
-        "merge": null,
-        "notes": Array [
-          Object {
-            "text": "",
-            "title": "BREAKING CHANGE",
-          },
-        ],
-        "references": Array [],
-        "revert": null,
-        "scope": "test",
-        "subject": "test some more feature",
-        "type": "feat",
-      },
-      "refs": "",
-    },
-  ],
-  "fix": Array [
-    Object {
-      "author_email": "",
-      "author_name": "",
-      "body": "",
-      "date": "",
-      "hash": "",
-      "message": "fix!: test another fix",
-      "parsed": Object {
-        "body": null,
-        "footer": null,
-        "header": "",
-        "mentions": Array [],
-        "merge": null,
-        "notes": Array [
-          Object {
-            "text": "",
-            "title": "BREAKING CHANGE",
-          },
-        ],
-        "references": Array [],
-        "revert": null,
-        "scope": null,
-        "subject": "test another fix",
-        "type": "fix",
       },
       "refs": "",
     },
@@ -853,70 +749,11 @@ Object {
       "refs": "",
     },
   ],
-  "feature": Array [
-    Object {
-      "author_email": "",
-      "author_name": "",
-      "body": "",
-      "date": "",
-      "hash": "",
-      "message": "feature(test)!: test some more feature",
-      "parsed": Object {
-        "body": null,
-        "footer": null,
-        "header": "",
-        "mentions": Array [],
-        "merge": null,
-        "notes": Array [
-          Object {
-            "text": "",
-            "title": "BREAKING CHANGE",
-          },
-        ],
-        "references": Array [],
-        "revert": null,
-        "scope": "test",
-        "subject": "test some more feature",
-        "type": "feature",
-      },
-      "refs": "",
-    },
-  ],
-  "fix": Array [
-    Object {
-      "author_email": "",
-      "author_name": "",
-      "body": "",
-      "date": "",
-      "hash": "",
-      "message": "fix!: test another fix",
-      "parsed": Object {
-        "body": null,
-        "footer": null,
-        "header": "",
-        "mentions": Array [],
-        "merge": null,
-        "notes": Array [
-          Object {
-            "text": "",
-            "title": "BREAKING CHANGE",
-          },
-        ],
-        "references": Array [],
-        "revert": null,
-        "scope": null,
-        "subject": "test another fix",
-        "type": "fix",
-      },
-      "refs": "",
-    },
-  ],
 }
 `;
 
 exports[`changelog.ts indexByType correctly indexes commits from commits-non-breaking.json 1`] = `
 Object {
-  "breaking": Array [],
   "chore": Array [
     Object {
       "author_email": "",
