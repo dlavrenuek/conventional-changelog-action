@@ -1,6 +1,6 @@
 # Generic Conventional Changelog GitHub Action
 
-<a href="https://github.com/dlavrenuek/conventional-changelog-action/actions"><img alt="javscript-action status" src="https://github.com/dlavrenuek/conventional-changelog-action/workflows/unit-test/badge.svg"></a>
+<a href="https://github.com/dlavrenuek/conventional-changelog-action/actions"><img alt="javscript-action status" src="https://github.com/dlavrenuek/conventional-changelog-action/workflows/development/badge.svg"></a>
 
 This GitHub action generates a changelog from git history using conventional commits without any other
 requirements on your project versioning or labeling. It is intended to be used with other actions to make use of the
