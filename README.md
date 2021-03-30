@@ -45,3 +45,11 @@ Inputs available through `outputs`:
 | ------ | ---------------------------------------------------- |
 | body   | The changelog body                                   |
 | bump   | Recommended bump based on the provided configuration |
+
+### Complete workflow
+
+A complete workflow for creating a draft release can be found [here](https://github.com/dlavrenuek/conventional-changelog-action/blob/master/.github/workflows/draft-release.yml).
+
+## Contribute
+
+If you want to contribute, feel free to [open an issue](https://github.com/dlavrenuek/conventional-changelog-action/issues) or a [pull request](https://github.com/dlavrenuek/conventional-changelog-action/pulls).

@@ -1,6 +1,6 @@
 {
   "name": "test-release-tags",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "repository": "git@github.com:dlavrenuek/conventional-changelog-action.git",
   "author": "Dimitri Lavrenük <dimitri.lavr@gmail.com>",
