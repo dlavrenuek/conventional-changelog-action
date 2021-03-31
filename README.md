@@ -16,7 +16,7 @@ steps:
     with:
       fetch-depth: 0
 
-  - uses: dlavrenuek/conventional-changelog-action
+  - uses: dlavrenuek/conventional-changelog-action@v1.1.0
     id: changelog
     with:
       from: v1.0.0
