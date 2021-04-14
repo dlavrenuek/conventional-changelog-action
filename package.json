@@ -26,7 +26,7 @@
     "JavaScript"
   ],
   "dependencies": {
-    "@actions/core": "1.2.6",
+    "@actions/core": "1.2.7",
     "@conventional-commits/parser": "0.4.1",
     "joi": "17.4.0",
     "simple-git": "2.37.0"
