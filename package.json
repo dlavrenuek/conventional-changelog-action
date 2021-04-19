@@ -29,7 +29,7 @@
     "@actions/core": "1.2.7",
     "@conventional-commits/parser": "0.4.1",
     "joi": "17.4.0",
-    "simple-git": "2.37.0"
+    "simple-git": "2.38.0"
   },
   "devDependencies": {
     "@babel/core": "7.13.15",
