@@ -29,12 +29,12 @@
     "@actions/core": "1.4.0",
     "@conventional-commits/parser": "0.4.1",
     "joi": "17.4.0",
-    "simple-git": "2.39.0"
+    "simple-git": "2.40.0"
   },
   "devDependencies": {
     "@babel/core": "7.14.3",
     "@babel/preset-env": "7.14.7",
-    "@babel/preset-typescript": "7.13.0",
+    "@babel/preset-typescript": "7.14.5",
     "@types/jest": "26.0.23",
     "@typescript-eslint/eslint-plugin": "4.25.0",
     "@typescript-eslint/parser": "4.28.0",
