@@ -78,6 +78,7 @@ type GenerateChangelog = (params: {
   typeLabels: GroupLabel[];
   bumpLabels: GroupLabel[];
   sortOrder?: SortOrder;
+  emptyMessage?: string;
 }) => Changelog;
 
 export const generateChangelog: GenerateChangelog = ({
@@ -86,24 +87,26 @@ export const generateChangelog: GenerateChangelog = ({
   typeLabels,
   bumpLabels,
   sortOrder = 'desc',
+  emptyMessage = 'No changes',
 }) => {
   const indexedByType = indexByType(commits);
   const mapCommit = (commit: Commit) => commitToChagelogLine(commit, issuesUrl);
-  const body = typeLabels
-    .map(({ title, types }) => {
-      const typeCommits = types
-        .map((type) => indexedByType[type] || [])
-        .flat()
-        .sort(commitSortBy[sortOrder]);
+  const body =
+    typeLabels
+      .map(({ title, types }) => {
+        const typeCommits = types
+          .map((type) => indexedByType[type] || [])
+          .flat()
+          .sort(commitSortBy[sortOrder]);
 
-      if (!typeCommits.length) {
-        return null;
-      }
+        if (!typeCommits.length) {
+          return null;
+        }
 
-      return [`## ${title}`, ...typeCommits.map(mapCommit)].join('\n');
-    })
-    .filter((block) => block !== null)
-    .join('\n\n');
+        return [`## ${title}`, ...typeCommits.map(mapCommit)].join('\n');
+      })
+      .filter((block) => block !== null)
+      .join('\n\n') || emptyMessage;
   const bump = calculateBump(indexedByType, bumpLabels);
 
   return {

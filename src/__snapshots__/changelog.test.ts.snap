@@ -332,14 +332,14 @@ Object {
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-custom.json, type-breaking.json, sortOrder: asc 1`] = `
 Object {
-  "body": "",
+  "body": "No changes",
   "bump": "custom1",
 }
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-custom.json, type-breaking.json, sortOrder: desc 1`] = `
 Object {
-  "body": "",
+  "body": "No changes",
   "bump": "custom1",
 }
 `;
@@ -378,14 +378,14 @@ Object {
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-empty.json, type-breaking.json, sortOrder: asc 1`] = `
 Object {
-  "body": "",
+  "body": "No changes",
   "bump": "",
 }
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-empty.json, type-breaking.json, sortOrder: desc 1`] = `
 Object {
-  "body": "",
+  "body": "No changes",
   "bump": "",
 }
 `;
@@ -424,14 +424,14 @@ Object {
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-semver.json, type-breaking.json, sortOrder: asc 1`] = `
 Object {
-  "body": "",
+  "body": "No changes",
   "bump": "minor",
 }
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-semver.json, type-breaking.json, sortOrder: desc 1`] = `
 Object {
-  "body": "",
+  "body": "No changes",
   "bump": "minor",
 }
 `;
