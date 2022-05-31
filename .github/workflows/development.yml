@@ -28,6 +28,14 @@ jobs:
           fetch-depth: 0
 
       - uses: ./
+        name: Integration test with default configuration
         with:
+          from:
+          to: HEAD
+
+      - uses: ./
+        name: Integration test with custom configuration
+        with:
+          config-file: ./.github/testConfig.json
           from:
           to: HEAD

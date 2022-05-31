@@ -32,5 +32,6 @@
     }
   ],
   "issuesUrl": "",
-  "sortOrder": "desc"
+  "sortOrder": "desc",
+  "emptyMessage": "No changes"
 }

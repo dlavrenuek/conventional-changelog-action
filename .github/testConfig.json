@@ -1,0 +1,25 @@
+{
+  "typeLabels": [
+    {
+      "title": "All changes",
+      "types": ["breaking", "feat", "fix", "chore"]
+    }
+  ],
+  "bumpLabels": [
+    {
+      "title": "major",
+      "types": ["breaking", "feat"]
+    },
+    {
+      "title": "minor",
+      "types": []
+    },
+    {
+      "title": "patch",
+      "types": []
+    }
+  ],
+  "issuesUrl": "",
+  "sortOrder": "asc",
+  "emptyMessage": "There were really no changes"
+}

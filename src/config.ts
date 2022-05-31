@@ -1,4 +1,6 @@
 import { GroupLabel, SortOrder } from './changelog';
+import { debug } from '@actions/core';
+import { readFileSync } from 'fs';
 
 type Config = {
   typeLabels: GroupLabel[];
@@ -8,6 +10,12 @@ type Config = {
 };
 
 export const getConfig = (configFile: string): Config => {
-  const { typeLabels, bumpLabels, issuesUrl, sortOrder } = require(configFile);
+  debug(`Loading config file: ${configFile}`);
+
+  const config = JSON.parse(readFileSync(configFile, { encoding: 'utf8' }));
+
+  debug(`Loaded config: ${config}`);
+
+  const { typeLabels, bumpLabels, issuesUrl, sortOrder } = config;
   return { typeLabels, bumpLabels, issuesUrl, sortOrder };
 };
