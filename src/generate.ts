@@ -10,7 +10,7 @@ type Generate = (params: {
 }) => Promise<Changelog>;
 
 const generate: Generate = async ({ from, to, configFile }) => {
-  const config = getConfig(
+  const config = await getConfig(
     configFile || path.join(__dirname, 'defaultConfig.json')
   );
   const issuesUrl = config.issuesUrl || (await getIssuesPath());

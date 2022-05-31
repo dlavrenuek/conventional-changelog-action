@@ -16,7 +16,7 @@
     "test:lint": "eslint src/**/*.ts",
     "test:unit": "jest",
     "build": "yarn build:clean && yarn build:compile && yarn build:copy-config",
-    "build:clean": "rm dist/*",
+    "build:clean": "rm dist/* || :",
     "build:compile": "ncc build src/index.ts -o dist -m --license licenses.txt",
     "build:copy-config": "cp src/defaultConfig.json dist/defaultConfig.json"
   },
@@ -38,7 +38,7 @@
     "@types/jest": "26.0.23",
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.0",
-    "@vercel/ncc": "0.28.6",
+    "@vercel/ncc": "0.34.0",
     "babel-jest": "27.1.0",
     "eslint": "7.27.0",
     "eslint-config-prettier": "8.3.0",
