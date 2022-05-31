@@ -36,6 +36,6 @@ jobs:
       - uses: ./
         name: Integration test with custom configuration
         with:
-          config-file: .github/testConfig.json
+          config-file: ./.github/testConfig.json
           from:
           to: HEAD
