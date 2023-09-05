@@ -3,7 +3,7 @@ name: Pull Request Conventions
 on:
   pull_request:
     types: [opened, edited, synchronize, reopened]
-    branches: [master, v*]
+    branches: [main, v*]
 
 jobs:
   lint-format:
