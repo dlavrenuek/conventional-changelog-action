@@ -1,6 +1,5 @@
 import cp from "node:child_process";
 import path from "node:path";
-import process from "node:process";
 import { promisify } from "node:util";
 
 const exec = promisify(cp.exec);
@@ -8,9 +7,7 @@ const exec = promisify(cp.exec);
 describe("index.ts", () => {
   test("The action is executed without an error", async () => {
     const ip = path.join(__dirname, "index.ts");
-    const { stdout, stderr } = await exec(`pnpm exec ts-node ${ip}`, {
-      env: process.env,
-    });
+    const { stdout, stderr } = await exec(`pnpm exec ts-node ${ip} && :`);
 
     console.log("stdout", stdout);
     console.log("stderr", stderr);
