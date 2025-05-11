@@ -1,9 +1,9 @@
-import simpleGit, { DefaultLogFields } from 'simple-git';
 import {
-  ConventionalChangelogCommit,
+  type ConventionalChangelogCommit,
   parser,
   toConventionalChangelogFormat,
-} from '@conventional-commits/parser';
+} from "@conventional-commits/parser";
+import simpleGit, { type DefaultLogFields } from "simple-git";
 
 const git = simpleGit();
 
@@ -23,7 +23,7 @@ export const getCommits: Git = async ({ from, to }) => {
       return {
         ...commit,
         parsed: toConventionalChangelogFormat(
-          parser(`${message}${body && `\n${body}`}`)
+          parser(`${message}${body && `\n${body}`}`),
         ),
       };
     } catch (e) {
@@ -37,14 +37,14 @@ export const getCommits: Git = async ({ from, to }) => {
 export const getRepositoryUrl = async (): Promise<string | null> => {
   const {
     values: {
-      '.git/config': { 'remote.origin.url': remotes },
+      ".git/config": { "remote.origin.url": remotes },
     },
   } = await git.listConfig();
 
   const remote = Array.isArray(remotes) ? remotes[0] : remotes;
   const sshRegex = /git@github\.com:(.+)\.git/;
   const httpRegex = /https:\/\/github\.com\/(.+)/;
-  const replace = 'https://github.com/$1';
+  const replace = "https://github.com/$1";
 
   for (const testRegx of [sshRegex, httpRegex]) {
     if (testRegx.test(remote)) {
@@ -60,7 +60,7 @@ export const getIssuesPath = async (): Promise<string> => {
 
   if (!repositoryUrl) {
     throw new Error(
-      'Repository url can not be determined from local git config'
+      "Repository url can not be determined from local git config",
     );
   }
 

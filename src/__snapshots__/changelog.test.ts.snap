@@ -19,7 +19,7 @@ exports[`changelog.ts calculateBump correctly calculates version bump of commits
 exports[`changelog.ts calculateBump correctly calculates version bump of commits-non-breaking.json with bump-semver.json 1`] = `"minor"`;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-custom.json, type-breaking.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature",
@@ -28,7 +28,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-custom.json, type-breaking.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature",
@@ -37,7 +37,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-custom.json, type-multiple.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -53,7 +53,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-custom.json, type-multiple.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -69,7 +69,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-empty.json, type-breaking.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature",
@@ -78,7 +78,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-empty.json, type-breaking.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature",
@@ -87,7 +87,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-empty.json, type-multiple.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -103,7 +103,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-empty.json, type-multiple.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -119,7 +119,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-semver.json, type-breaking.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature",
@@ -128,7 +128,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-semver.json, type-breaking.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature",
@@ -137,7 +137,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-semver.json, type-multiple.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -153,7 +153,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking1.json, bump-semver.json, type-multiple.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -169,7 +169,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-custom.json, type-breaking.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature
@@ -179,7 +179,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-custom.json, type-breaking.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature
@@ -189,7 +189,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-custom.json, type-multiple.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -206,7 +206,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-custom.json, type-multiple.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -223,7 +223,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-empty.json, type-breaking.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature
@@ -233,7 +233,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-empty.json, type-breaking.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature
@@ -243,7 +243,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-empty.json, type-multiple.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -260,7 +260,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-empty.json, type-multiple.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -277,7 +277,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-semver.json, type-breaking.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature
@@ -287,7 +287,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-semver.json, type-breaking.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## BREAKING TYPE TITLE
 * test another fix
 * **test**: test some more feature
@@ -297,7 +297,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-semver.json, type-multiple.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -314,7 +314,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-breaking2.json, bump-semver.json, type-multiple.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## Breaking changes
 * test another fix
 * **test**: test some more feature
@@ -331,21 +331,21 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-custom.json, type-breaking.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "No changes",
   "bump": "custom1",
 }
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-custom.json, type-breaking.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "No changes",
   "bump": "custom1",
 }
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-custom.json, type-multiple.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## New features
 * test feature
 * test another feature
@@ -361,7 +361,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-custom.json, type-multiple.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## New features
 * test feature
 * test another feature
@@ -377,21 +377,21 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-empty.json, type-breaking.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "No changes",
   "bump": "",
 }
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-empty.json, type-breaking.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "No changes",
   "bump": "",
 }
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-empty.json, type-multiple.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## New features
 * test feature
 * test another feature
@@ -407,7 +407,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-empty.json, type-multiple.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## New features
 * test feature
 * test another feature
@@ -423,21 +423,21 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-semver.json, type-breaking.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "No changes",
   "bump": "minor",
 }
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-semver.json, type-breaking.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "No changes",
   "bump": "minor",
 }
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-semver.json, type-multiple.json, sortOrder: asc 1`] = `
-Object {
+{
   "body": "## New features
 * test feature
 * test another feature
@@ -453,7 +453,7 @@ Object {
 `;
 
 exports[`changelog.ts generateChangelog correctly generates the changelog with: commits-non-breaking.json, bump-semver.json, type-multiple.json, sortOrder: desc 1`] = `
-Object {
+{
   "body": "## New features
 * test feature
 * test another feature
@@ -469,28 +469,28 @@ Object {
 `;
 
 exports[`changelog.ts indexByType correctly indexes commits from commits-breaking1.json 1`] = `
-Object {
-  "breaking": Array [
-    Object {
+{
+  "breaking": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "fix!: test another fix",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [
-          Object {
+        "notes": [
+          {
             "text": "",
             "title": "BREAKING CHANGE",
           },
         ],
-        "references": Array [],
+        "references": [],
         "revert": null,
         "scope": null,
         "subject": "test another fix",
@@ -498,26 +498,26 @@ Object {
       },
       "refs": "",
     },
-    Object {
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "feat(test)!: test some more feature",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [
-          Object {
+        "notes": [
+          {
             "text": "",
             "title": "BREAKING CHANGE",
           },
         ],
-        "references": Array [],
+        "references": [],
         "revert": null,
         "scope": "test",
         "subject": "test some more feature",
@@ -526,22 +526,22 @@ Object {
       "refs": "",
     },
   ],
-  "chore": Array [
-    Object {
+  "chore": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "chore: test some chore",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": "",
         "subject": "test some chore",
@@ -550,22 +550,22 @@ Object {
       "refs": "",
     },
   ],
-  "feat": Array [
-    Object {
+  "feat": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "feat: test feature",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": null,
         "subject": "test feature",
@@ -573,21 +573,21 @@ Object {
       },
       "refs": "",
     },
-    Object {
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "feat: test another feature",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": null,
         "subject": "test another feature",
@@ -600,28 +600,28 @@ Object {
 `;
 
 exports[`changelog.ts indexByType correctly indexes commits from commits-breaking2.json 1`] = `
-Object {
-  "breaking": Array [
-    Object {
+{
+  "breaking": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "fix!: test another fix",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [
-          Object {
+        "notes": [
+          {
             "text": "",
             "title": "BREAKING CHANGE",
           },
         ],
-        "references": Array [],
+        "references": [],
         "revert": null,
         "scope": null,
         "subject": "test another fix",
@@ -629,26 +629,26 @@ Object {
       },
       "refs": "",
     },
-    Object {
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "feature(test)!: test some more feature",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [
-          Object {
+        "notes": [
+          {
             "text": "",
             "title": "BREAKING CHANGE",
           },
         ],
-        "references": Array [],
+        "references": [],
         "revert": null,
         "scope": "test",
         "subject": "test some more feature",
@@ -656,21 +656,21 @@ Object {
       },
       "refs": "",
     },
-    Object {
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "breaking: test breaking as a type",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": "",
         "subject": "test breaking as a type",
@@ -679,22 +679,22 @@ Object {
       "refs": "",
     },
   ],
-  "chore": Array [
-    Object {
+  "chore": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "chore: test some chore",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": "",
         "subject": "test some chore",
@@ -703,22 +703,22 @@ Object {
       "refs": "",
     },
   ],
-  "feat": Array [
-    Object {
+  "feat": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "feat: test feature",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": null,
         "subject": "test feature",
@@ -726,21 +726,21 @@ Object {
       },
       "refs": "",
     },
-    Object {
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "feat: test another feature",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": null,
         "subject": "test another feature",
@@ -753,23 +753,23 @@ Object {
 `;
 
 exports[`changelog.ts indexByType correctly indexes commits from commits-non-breaking.json 1`] = `
-Object {
-  "chore": Array [
-    Object {
+{
+  "chore": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "chore: test some chore",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": "test",
         "subject": "test some chore",
@@ -778,22 +778,22 @@ Object {
       "refs": "",
     },
   ],
-  "feat": Array [
-    Object {
+  "feat": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "feat: test feature",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": null,
         "subject": "test feature",
@@ -801,21 +801,21 @@ Object {
       },
       "refs": "",
     },
-    Object {
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "feat: test another feature",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": null,
         "subject": "test another feature",
@@ -824,22 +824,22 @@ Object {
       "refs": "",
     },
   ],
-  "feature": Array [
-    Object {
+  "feature": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "feature(test): test some more feature",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": "test",
         "subject": "test some more feature",
@@ -848,22 +848,22 @@ Object {
       "refs": "",
     },
   ],
-  "fix": Array [
-    Object {
+  "fix": [
+    {
       "author_email": "",
       "author_name": "",
       "body": "",
       "date": "",
       "hash": "",
       "message": "fix: test another fix",
-      "parsed": Object {
+      "parsed": {
         "body": null,
         "footer": null,
         "header": "",
-        "mentions": Array [],
+        "mentions": [],
         "merge": null,
-        "notes": Array [],
-        "references": Array [],
+        "notes": [],
+        "references": [],
         "revert": null,
         "scope": null,
         "subject": "test another fix",

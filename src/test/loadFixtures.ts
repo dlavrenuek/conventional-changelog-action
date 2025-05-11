@@ -1,5 +1,5 @@
-import * as path from 'path';
-import * as fs from 'fs';
+import * as fs from "node:fs";
+import * as path from "node:path";
 
 export type Fixture = {
   fileName: string;
@@ -9,8 +9,8 @@ export type Fixture = {
 const loadFixtures = (testSuite: string): Fixture[] => {
   const fixturesSubPath = path
     .resolve(testSuite)
-    .substr(path.resolve(path.join(__dirname, '..')).length);
-  const fixturesPath = path.join(__dirname, 'fixtures', fixturesSubPath);
+    .substr(path.resolve(path.join(__dirname, "..")).length);
+  const fixturesPath = path.join(__dirname, "fixtures", fixturesSubPath);
 
   return fs.readdirSync(fixturesPath).map((fileName) => ({
     fileName,

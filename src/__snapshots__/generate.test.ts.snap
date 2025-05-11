@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`generate.ts generates the correct changelog 1`] = `
-Object {
+{
   "body": "## 🚀 New Features
 * add issuesUrl to configuration
 
