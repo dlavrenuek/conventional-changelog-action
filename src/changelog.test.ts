@@ -1,20 +1,22 @@
-import loadFixtures, { Fixture } from './test/loadFixtures';
 import {
+  type GroupLabel,
+  type SortOrder,
   calculateBump,
   generateChangelog,
-  GroupLabel,
   indexByType,
-  SortOrder,
-} from './changelog';
-import { Commit } from './git';
+} from "./changelog";
+import type { Commit } from "./git";
+import loadFixtures, { type Fixture } from "./test/loadFixtures";
 
-const startsWith = (value: string) => ({ fileName }: Fixture) =>
-  fileName.includes(value);
+const startsWith =
+  (value: string) =>
+  ({ fileName }: Fixture) =>
+    fileName.includes(value);
 
-describe('changelog.ts', () => {
-  describe('indexByType', () => {
+describe("changelog.ts", () => {
+  describe("indexByType", () => {
     loadFixtures(__filename)
-      .filter(({ fileName }) => fileName.includes('commits-'))
+      .filter(({ fileName }) => fileName.includes("commits-"))
       .forEach(({ fileName, content }) => {
         it(`correctly indexes commits from ${fileName}`, () => {
           expect(indexByType(content() as Commit[])).toMatchSnapshot();
@@ -22,10 +24,10 @@ describe('changelog.ts', () => {
       });
   });
 
-  describe('calculateBump', () => {
+  describe("calculateBump", () => {
     const fixtures = loadFixtures(__filename);
-    const commitFixtures = fixtures.filter(startsWith('commits-'));
-    const bumpFixtures = fixtures.filter(startsWith('bump-'));
+    const commitFixtures = fixtures.filter(startsWith("commits-"));
+    const bumpFixtures = fixtures.filter(startsWith("bump-"));
 
     commitFixtures.forEach(({ fileName, content }) => {
       bumpFixtures.forEach(
@@ -34,42 +36,42 @@ describe('changelog.ts', () => {
             expect(
               calculateBump(
                 indexByType(content() as Commit[]),
-                bumpContent() as GroupLabel[]
-              )
+                bumpContent() as GroupLabel[],
+              ),
             ).toMatchSnapshot();
           });
-        }
+        },
       );
     });
   });
 
-  describe('generateChangelog', () => {
+  describe("generateChangelog", () => {
     const fixtures = loadFixtures(__filename);
-    const commitFixtures = fixtures.filter(startsWith('commits-'));
-    const bumpFixtures = fixtures.filter(startsWith('bump-'));
-    const typeFixtures = fixtures.filter(startsWith('type-'));
+    const commitFixtures = fixtures.filter(startsWith("commits-"));
+    const bumpFixtures = fixtures.filter(startsWith("bump-"));
+    const typeFixtures = fixtures.filter(startsWith("type-"));
 
     commitFixtures.forEach(({ fileName, content }) => {
       bumpFixtures.forEach(
         ({ fileName: bumpFileName, content: bumpContent }) => {
           typeFixtures.forEach(
             ({ fileName: typeFileName, content: typeContent }) => {
-              ['asc', 'desc'].forEach((sortOrder) => {
+              ["asc", "desc"].forEach((sortOrder) => {
                 it(`correctly generates the changelog with: ${fileName}, ${bumpFileName}, ${typeFileName}, sortOrder: ${sortOrder}`, () => {
                   expect(
                     generateChangelog({
                       commits: content() as Commit[],
-                      issuesUrl: 'https://github.com/some/repository/issues/',
+                      issuesUrl: "https://github.com/some/repository/issues/",
                       typeLabels: typeContent() as GroupLabel[],
                       bumpLabels: bumpContent() as GroupLabel[],
                       sortOrder: sortOrder as SortOrder,
-                    })
+                    }),
                   ).toMatchSnapshot();
                 });
               });
-            }
+            },
           );
-        }
+        },
       );
     });
   });

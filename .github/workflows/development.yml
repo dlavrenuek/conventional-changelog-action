@@ -7,35 +7,60 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
       - name: Install
-        run: yarn install --frozen-lockfile
+        run: pnpm i --frozen-lockfile
+
+      - name: Format and lint
+        run: pnpm test:ci
 
       - name: Test
-        run: yarn test
+        run: pnpm test:unit
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
   test-integration:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test:
+          - name: default
+            config: ""
+          - name: custom
+            config: ./.github/testConfig.json
+
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - uses: ./
-        name: Integration test with default configuration
+        name: Integration test with ${{ matrix.test.name }} config
+        id: test
         with:
-          from:
-          to: HEAD
+          config-file: ${{ matrix.test.config }}
+          from: "v0.1.0"
+          to: 2710e5e0a089c3d7f92a8d03cac96b3c5f36af97
 
-      - uses: ./
-        name: Integration test with custom configuration
-        with:
-          config-file: ./.github/testConfig.json
-          from:
-          to: HEAD
+      - run: |-
+          RESULT=$(echo '{"bump": ${{ toJSON(steps.test.outputs.bump) }}, "body": ${{ toJSON(steps.test.outputs.body) }}}')
+          REFERENCE=$(cat ./.github/snapshots/${{ matrix.test.name }}.json)
+          if [ "$RESULT" != "$REFERENCE" ]; then
+            echo "Result does not match the reference"
+            exit 1
+          fi

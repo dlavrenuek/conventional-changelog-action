@@ -1,6 +1,6 @@
-import { Commit } from './git';
+import type { Commit } from "./git";
 
-const BREAKING_CHANGE_TITLE = 'BREAKING CHANGE';
+const BREAKING_CHANGE_TITLE = "BREAKING CHANGE";
 
 type IndexedByType = Record<string, Commit[]>;
 
@@ -10,41 +10,36 @@ export const indexByType = (commits: Commit[]): IndexedByType =>
       parsed: { type, notes },
     } = commit;
     const isBreaking = notes.some(
-      ({ title }) => title === BREAKING_CHANGE_TITLE
+      ({ title }) => title === BREAKING_CHANGE_TITLE,
     );
-    const determinedType = isBreaking ? 'breaking' : type;
-    const typeArray = [...(indexed[determinedType] || []), commit];
+    const determinedType = isBreaking ? "breaking" : type;
+    indexed[determinedType] = [...(indexed[determinedType] || []), commit];
 
-    return {
-      ...indexed,
-      [determinedType]: typeArray,
-    };
+    return indexed;
   }, {});
 
 export const commitToChagelogLine = (
   { parsed: { subject, scope } }: Commit,
-  issuesUrl: string
+  issuesUrl: string,
 ) => {
   const message = subject.replace(
     /(.+)\(#([0-9]+)\)/,
-    `$1([#$2](${issuesUrl}$2))`
+    `$1([#$2](${issuesUrl}$2))`,
   );
 
-  return `* ${scope ? `**${scope}**: ` : ''}${message}`;
+  return `* ${scope ? `**${scope}**: ` : ""}${message}`;
 };
 
 export const calculateBump = (
   indexedByType: IndexedByType,
-  bumpLabels: GroupLabel[]
+  bumpLabels: GroupLabel[],
 ): string => {
   if (!bumpLabels.length) {
-    return '';
+    return "";
   }
   for (let i = 0; i < bumpLabels.length; i++) {
     const { title, types } = bumpLabels[i];
-    if (
-      types.some((type) => indexedByType[type] && indexedByType[type].length)
-    ) {
+    if (types.some((type) => indexedByType[type]?.length)) {
       return title;
     }
   }
@@ -53,7 +48,7 @@ export const calculateBump = (
 
 type CommitSorter = (a: Commit, b: Commit) => -1 | 1;
 
-export type CommitSortOrder = 'asc' | 'desc';
+export type CommitSortOrder = "asc" | "desc";
 
 const commitSortBy: Record<CommitSortOrder, CommitSorter> = {
   asc: ({ date: dateA }, { date: dateB }) => (dateA < dateB ? -1 : 1),
@@ -70,7 +65,7 @@ export type GroupLabel = {
   types: string[];
 };
 
-export type SortOrder = 'asc' | 'desc';
+export type SortOrder = "asc" | "desc";
 
 type GenerateChangelog = (params: {
   commits: Commit[];
@@ -86,8 +81,8 @@ export const generateChangelog: GenerateChangelog = ({
   issuesUrl,
   typeLabels,
   bumpLabels,
-  sortOrder = 'desc',
-  emptyMessage = 'No changes',
+  sortOrder = "desc",
+  emptyMessage = "No changes",
 }) => {
   const indexedByType = indexByType(commits);
   const mapCommit = (commit: Commit) => commitToChagelogLine(commit, issuesUrl);
@@ -95,18 +90,17 @@ export const generateChangelog: GenerateChangelog = ({
     typeLabels
       .map(({ title, types }) => {
         const typeCommits = types
-          .map((type) => indexedByType[type] || [])
-          .flat()
+          .flatMap((type) => indexedByType[type] || [])
           .sort(commitSortBy[sortOrder]);
 
         if (!typeCommits.length) {
           return null;
         }
 
-        return [`## ${title}`, ...typeCommits.map(mapCommit)].join('\n');
+        return [`## ${title}`, ...typeCommits.map(mapCommit)].join("\n");
       })
       .filter((block) => block !== null)
-      .join('\n\n') || emptyMessage;
+      .join("\n\n") || emptyMessage;
   const bump = calculateBump(indexedByType, bumpLabels);
 
   return {
