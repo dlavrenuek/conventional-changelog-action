@@ -7,7 +7,9 @@ const exec = promisify(cp.exec);
 describe("index.ts", () => {
   test("The action is executed without an error", async () => {
     const ip = path.join(__dirname, "index.ts");
-    const { stdout, stderr } = await exec(`./node_modules/.bin/ts-node ${ip} && :`);
+    const { stdout, stderr } = await exec(
+      `./node_modules/.bin/ts-node ${ip} && :`,
+    );
 
     expect(stderr).toBeFalsy();
     expect(stdout).toBeTruthy();
