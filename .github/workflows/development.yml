@@ -33,20 +33,26 @@ jobs:
 
   test-integration:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test:
+          - name: default
+            config: ""
+          - name: custom
+            config: ./.github/testConfig.json
+
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
       - uses: ./
-        name: Integration test with default configuration
+        name: Integration test with ${{ matrix.test.name }} config
+        id: test
         with:
-          from: ""
-          to: HEAD
+          config-file: ${{ matrix.test.config }}
+          from: "v0.1.0"
+          to: 2710e5e0a089c3d7f92a8d03cac96b3c5f36af97
 
-      - uses: ./
-        name: Integration test with custom configuration
-        with:
-          config-file: ./.github/testConfig.json
-          from: ""
-          to: HEAD
+      - run: |-
+          echo '{"bump": ${{ toJSON(steps.test.outputs.body) }}, "body": ${{ toJSON(steps.test.outputs.body) }}}'
