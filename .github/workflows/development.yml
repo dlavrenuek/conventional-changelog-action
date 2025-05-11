@@ -42,7 +42,7 @@ jobs:
             config: ./.github/testConfig.json
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -56,7 +56,7 @@ jobs:
 
       - run: |-
           RESULT=$(echo '{"bump": ${{ toJSON(steps.test.outputs.bump) }}, "body": ${{ toJSON(steps.test.outputs.body) }}}')
-          REFERENCE=$(cat ./github/snapshots/${{ matrix.test.name }}.json)
+          REFERENCE=$(cat ./.github/snapshots/${{ matrix.test.name }}.json)
           if [ "$RESULT" != "$REFERENCE" ] then
             echo "Result does not match the reference"
             exit 1
