@@ -7,18 +7,29 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
       - name: Install
-        run: yarn install --frozen-lockfile
+        run: pnpm i --frozen-lockfile
 
       - name: Test
-        run: yarn test
+        run: pnpm test
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
   test-integration:
     runs-on: ubuntu-latest
@@ -30,12 +41,12 @@ jobs:
       - uses: ./
         name: Integration test with default configuration
         with:
-          from:
+          from: ""
           to: HEAD
 
       - uses: ./
         name: Integration test with custom configuration
         with:
           config-file: ./.github/testConfig.json
-          from:
+          from: ""
           to: HEAD
