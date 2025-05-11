@@ -55,4 +55,9 @@ jobs:
           to: 2710e5e0a089c3d7f92a8d03cac96b3c5f36af97
 
       - run: |-
-          echo '{"bump": ${{ toJSON(steps.test.outputs.bump) }}, "body": ${{ toJSON(steps.test.outputs.body) }}}'
+          RESULT=$(echo '{"bump": ${{ toJSON(steps.test.outputs.bump) }}, "body": ${{ toJSON(steps.test.outputs.body) }}}')
+          REFERENCE=$(cat ./github/snapshots/${{ matrix.test.config }}.json)
+          if [ "$RESULT" != "$REFERENCE" ] then
+            echo "Result does not match the reference"
+            exit 1
+          fi
