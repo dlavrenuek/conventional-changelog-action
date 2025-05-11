@@ -55,4 +55,4 @@ jobs:
           to: 2710e5e0a089c3d7f92a8d03cac96b3c5f36af97
 
       - run: |-
-          echo '{"bump": ${{ toJSON(steps.test.outputs.body) }}, "body": ${{ toJSON(steps.test.outputs.body) }}}'
+          echo '{"bump": ${{ toJSON(steps.test.outputs.bump) }}, "body": ${{ toJSON(steps.test.outputs.body) }}}'
