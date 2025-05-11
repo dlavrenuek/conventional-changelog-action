@@ -17,6 +17,9 @@ describe("index.ts", () => {
       env,
     });
 
+    console.log("stdout", stdout);
+    console.log("stderr", stderr);
+
     expect(stderr).toBeFalsy();
     expect(stdout).toBeTruthy();
   });
